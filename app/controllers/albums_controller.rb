@@ -1,6 +1,6 @@
 class AlbumsController < ApplicationController
   before_action :set_album, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :verify_authenticity_token, only: [:update]
   # GET /albums
   # GET /albums.json
   def index
